@@ -9,8 +9,10 @@ public class Topic4A3{
         ///final
         int FinalTotalLocal = 0;
         int FinalTotalWestern = 0;
+        int FinalTotalSells = 0;
         double FinalWesternRevenue = 0.00;
         double FinalLocalRevenue = 0.00;
+        double FinalRevenue = 0.00;
         int FinalBurger = 0;
         int FinalSpaghetti = 0;
         int FinalChickenChop = 0;
@@ -120,8 +122,10 @@ public class Topic4A3{
             ///final
             FinalTotalWestern +=TotalWestern; 
             FinalTotalLocal += TotalLocal;
+            FinalTotalSells +=Totalsells;
             FinalLocalRevenue += LocalRevenue;
             FinalWesternRevenue += WesternRevenue;
+            FinalRevenue +=DailyRevenue;
             FinalBurger += burger;
             FinalSpaghetti += spaghetti;
             FinalChickenChop += chickenchop;
@@ -150,9 +154,9 @@ public class Topic4A3{
                     promotion = "Standard Promotion";
                 }
             }
-            if(TotalWestern>TotalLocal){
+            if(FinalTotalWestern>FinalTotalLocal){
                 popularCategory = "Western Food";
-            }else if(TotalLocal>TotalWestern){
+            }else if(FinalTotalLocal>FinalTotalWestern){
                 popularCategory = "Local Food";
             }else{
                 popularCategory = "Both categories are equally popular";
