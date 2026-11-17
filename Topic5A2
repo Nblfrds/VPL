@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Topic5A2 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int guests = scanner.nextInt();
+        double pricePer10Kg = scanner.nextDouble();
+
+        // Calculate required values
+        double weight = totalWeight(guests);
+        double hours = hoursCook(guests);
+        double riceCost = costRice(weight, pricePer10Kg);
+        double laborCost = laborCharge(hours);
+        double totalCost = totalAll(riceCost, laborCost);
+
+        // Display results
+        System.out.printf("Total cost (rice + labor): RM %.2f\n", totalCost);
+    }
+    
+    public static double totalWeight(int guests){
+        if(guests<0){
+            throw new IllegalArgumentException("Invalid Input");
+        }
+        return (guests/1000.0)*90;
+    }
+    
+    public static double hoursCook(int guests){
+        return (guests/1000.0)*5;
+    }
+    public static double costRice(double totalWeight, double pricePer10Kg){
+        if  (pricePer10Kg<0.0){
+            throw new IllegalArgumentException("Invalid Input");
+        }
+        return (totalWeight/10.0)*pricePer10Kg;
+    }
+    public static double laborCharge(double hours){
+        return (25.00*hours);
+    }
+    public static double totalAll(double costRice, double laborCharge){
+        return (costRice+laborCharge);
+    }
+}

@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class Topic5A1 {
+
+	static int score11 = 0;
+	static int score21 = 0;
+	static int score45 = 0;
+	static int score66 = 0;
+	static int score7 = 0;
+	static int score34 = 0;
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		int teamNumber = scanner.nextInt();
+
+		while (teamNumber != 0) {
+
+			while (teamNumber != 0 &&
+					teamNumber != 11 &&
+					teamNumber != 21 &&
+					teamNumber != 45 &&
+					teamNumber != 66 &&
+					teamNumber != 7 &&
+					teamNumber != 34) {
+
+				System.out.println("Invalid team number.");
+				teamNumber = scanner.nextInt();
+			}
+
+			if (teamNumber == 0)
+				break;
+
+			int points = scanner.nextInt();
+
+			updateScore(teamNumber, points);
+
+			teamNumber = scanner.nextInt();
+		}
+
+		displayScores();
+
+		System.out.println();
+
+		determineWinner();
+	}
+
+public static int getCurrentScore(int teamNumber){
+    if (teamNumber ==11) return score11;
+    if (teamNumber ==21) return score21;
+    if (teamNumber ==45) return score45;
+    if (teamNumber ==66) return score66;
+    if (teamNumber ==7) return score7;
+    if (teamNumber ==34) return score34;
+    return 0;
+}
+public static void updateScore(int teamNumber, int points){
+    int current =  getCurrentScore(teamNumber);
+    int newScore = current + points;
+    
+    if (teamNumber == 11) score11 = newScore;
+    else if (teamNumber == 21) score21 = newScore;
+    else if (teamNumber == 45) score45 = newScore;
+    else if (teamNumber == 66) score66 = newScore;
+    else if (teamNumber == 7) score7 = newScore;
+    else if (teamNumber == 34) score34 = newScore;
+}
+public static void displayScores(){
+    System.out.println("Team 11: "+ score11);
+    System.out.println("Team 21: "+ score21);
+    System.out.println("Team 45: "+ score45);
+    System.out.println("Team 66: "+ score66);
+    System.out.println("Team 7: "+ score7);
+    System.out.println("Team 34: "+ score34);
+}
+public static int determineWinner(){
+    int[] teams = {11,21,45,66,7,34};
+    int winningTeam = teams[0];
+    int MaxScore = -1;
+    
+    for (int team : teams){
+        int score=getCurrentScore(team);
+        if (score>MaxScore){
+            MaxScore=score;
+            winningTeam = team;
+        }
+    }
+    System.out.println("Winning Team: "+winningTeam);
+    return winningTeam;
+}
+}

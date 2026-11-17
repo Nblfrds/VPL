@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Topic5A3 {
+    static int totalPagesPrinted = 0;
+    public static void main (String[] args) {
+        Scanner scan = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.00");
+        
+        double credit = scan.nextDouble();
+        
+        for(int i =1 ; i<=3; i++){
+            int pages = scan.nextInt();
+            double cost = calculateCost(pages);
+            
+            System.out.println("Transaction "+ i +":");
+            System.out.println("Printing cost: RM "+df.format(cost));
+            
+            credit = processPrinting(credit,pages,cost);
+            
+            System.out.println("Remaining credit: RM "+ df.format(credit));
+        }
+        displaySummary();
+    }
+    public static double calculateCost(int pages){
+        if (pages<0){
+            throw new IllegalArgumentException("Invalid input");
+        }
+        if (pages>=20){
+            return (pages*0.2)-(pages*0.2*.1);
+        }else{
+            return(pages*0.2);
+        }
+    }
+    public static double processPrinting(double credit, int pages, double cost){
+        if (cost>credit){
+            System.out.println("Insufficient credit");
+            return credit;
+        }else{
+            totalPagesPrinted += pages;
+            return credit-cost;
+        }
+    }
+    public static void displaySummary(){
+        System.out.println("Total pages printed: "+totalPagesPrinted);
+    }
+}
