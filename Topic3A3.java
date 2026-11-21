@@ -40,7 +40,7 @@ public class Topic3A3{
     
             NumOfStudents--;
         }
-        
+        scan.close();
         AverageGradeA= (GradeA==0)? 0.0 :(double)SumGradeA/GradeA;
         AverageGradeB= (GradeB==0)? 0.0 :(double)SumGradeB/GradeB;
         AverageGradeC= (GradeC==0)? 0.0 :(double)SumGradeC/GradeC;

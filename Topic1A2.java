@@ -11,6 +11,7 @@ public class Topic1A2{
         
         int x = scan.nextInt();
         int y = scan.nextInt();
+        scan.close();
         
         int modal = bpenprice*x + bbookprice*y;
         int sell = spenprice*x + sbookprice*y;

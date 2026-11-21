@@ -111,6 +111,7 @@ public class Topic4A3 {
                     }
                     numsOfCustomers--;
             }
+            scan.close();
             TotalWestern = burger + spaghetti + chickenchop;
             TotalLocal = NasiGoreng + NasiLemak + MeeGoreng;
             Totalsells = TotalWestern + TotalLocal;

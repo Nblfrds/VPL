@@ -9,7 +9,7 @@ public class Topic1A1{
             int m = scan.nextInt();
             
             double y = Math.pow(a,n)*Math.pow(a,m);
-        
+        scan.close();
         System.out.println("the result is "+(int)y);
     } 
 }

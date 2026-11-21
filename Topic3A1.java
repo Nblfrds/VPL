@@ -25,7 +25,7 @@ public class Topic3A1{
             s++;
         }
         AverageFlour= (double)TotalFlour/i;
-        
+        scan.close();
         
         System.out.println(" Total kg of flour: "+TotalFlour);
         System.out.println("Average kg of flour: "+f.format(AverageFlour)+"kg");

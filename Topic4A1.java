@@ -19,5 +19,6 @@ public class Topic4A1{
 		    }
         System.out.println();
 	    }
+		scan.close();
     }
 }   

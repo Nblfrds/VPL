@@ -28,6 +28,7 @@ public class Topic3A2{
         }
         Average=(double)Totals/TotalStudent;
         percentage =((double)Success/TotalStudent)*100;
+        scan.close();
         
         System.out.println("=WALKING CHALLENGE SUMMARY=");
         System.out.println("Total steps: "+Totals);

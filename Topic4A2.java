@@ -27,6 +27,6 @@ public class Topic4A2{
         }else{
             System.out.println("Invalid number of dataset");
         }
-        
+        scan.close();
     }
 }

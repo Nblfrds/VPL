@@ -58,6 +58,7 @@ public class Topic2A3{
                 System.out.println("Invalid Input");
                 return;
         }
+        
         System.out.println("++++++++++++++++++++++");
         System.out.println("Gateway Smart Parking");
         System.out.println("++++++++++++++++++++++");

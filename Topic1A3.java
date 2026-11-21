@@ -8,6 +8,7 @@ public class Topic1A3{
         String InvestorName = scan.nextLine();
         Double TGP = scan.nextDouble();
         int HP = scan.nextInt();
+        scan.close();
         
         //Final//
         final Double GOLD_PRICE_PER_GRAM = 385.50;
